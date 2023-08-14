@@ -21,15 +21,9 @@ white = ColorClip(size=(1280,720), color=(255,255,255), duration=white_duration)
 text = f"How to pronounce {keyword}"
 bottomtext = "Subscribe for more pronunciations n whatnot"
 textclip = TextClip(text, fontsize=100, color="black", size=(1280,720)).set_duration(white_duration)
-bottomtextclip = TextClip(bottomtext, fontsize= 25, color="black", size=(1280,None)).set_duration(white_duration)
-bottomtextclip = bottomtextclip.set_position(('center', 'bottom'))
-txtheight = bottomtextclip.h
-newtextheight = txtheight // 2
-bottomtextclip = bottomtextclip.resize(height=newtextheight)
 
 # composite the text and the white
-whitetextnobot = CompositeVideoClip([white, textclip.set_position(('center', 'center'))])
-whitetext = CompositeVideoClip([whitetextnobot, bottomtextclip])
+whitetext = CompositeVideoClip([white, textclip.set_position(('center', 'center'))])
 
 # add audio
 vidaudtxt = whitetext.set_audio(audio)
