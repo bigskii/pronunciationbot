@@ -1,7 +1,5 @@
 from gtts import gTTS
 from moviepy.editor import *
-from simple_youtube_api.Channel import Channel
-from simple_youtube_api.LocalVideo import LocalVideo
 import PIL
 
 
